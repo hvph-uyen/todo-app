@@ -8,11 +8,11 @@
   - `npm install express cors dotenv openai`
   - `npm install`
   - `npm install react-responsive`
-3. Run `npm run dev` to start the Vite development server.
+3. Run `npm run dev` or `npm start` to start.
 4. Open your browser and navigate to http://localhost:5173/ (default Vite port) to view the app.
 
 ## 🔗 Deployed Web URL or APK file
-✍️ [Paste your link here]
+https://68c7ef38e0408237b4335f80--taskflow-todo-app-naver-hackathon.netlify.app 
 
 ## 🎥 Demo Video
 **Demo video link (≤ 2 minutes):**  
@@ -103,7 +103,7 @@ The goal is to create a **productivity tool** that adapts to the user’s curren
 
 ### a. If you had more time, what would you expand?
 - Add multi-user support with authentication.  
-- Store tasks in a real database for persistence.  
+- Store tasks in a real database so everyone accessing the application can use the AI function (for now can only run locally)
 
 ### b. If you integrate AI APIs more for your app, what would you do?
 - Use AI to auto-categorize tasks (work, personal, urgent).  
