@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import FloatingTaskInput from './components/FloatingTaskInput';
 import SuggestTask from './components/SuggestTask';
+import AISuggestionModal from "./components/AISuggestionModal";
 import TaskListWithFilter from './components/TaskListWithFilter';
 import Calendar from './components/Calendar';
 import AppNameLogo from './components/AppNameLogo';
@@ -23,6 +24,7 @@ export default function ToDoApp() {
   const [darkMode, setDarkMode] = useState(false);
   const [reminderTask, setReminderTask] = useState(null);
   const isMobile = useMediaQuery({ maxWidth: 600 });
+  const [showAISuggest, setShowAISuggest] = useState(false);
 
   const [tasks, setTasksState] = useState(() => {
     const saved = localStorage.getItem('todo-with-calendar-tasks');
@@ -118,7 +120,8 @@ export default function ToDoApp() {
     marginTop: 6,
   };
 
-  if (isMobile) { // mobile layout
+  /* ------------------- MOBILE LAYOUT ------------------- */
+  if (isMobile) {
     return (
       <div
         style={{
@@ -195,6 +198,7 @@ export default function ToDoApp() {
               flexWrap: 'wrap',
             }}
           >
+
             <button
               aria-label="Open new task input"
               style={{
@@ -227,6 +231,40 @@ export default function ToDoApp() {
             >
               {darkMode ? 'Light' : 'Dark'}
             </button>
+            {/* AI Suggestion Button (Mobile) */}
+            <button
+              onClick={() => setShowAISuggest(true)}
+              style={{
+                position: "fixed",
+                right: "20px",     // closer to the side
+                bottom: "80px",    // lifted a bit above bottom controls
+                borderRadius: "50%",
+                width: "48px",     // slightly smaller
+                height: "48px",
+                fontSize: "22px",
+                background: "#2563eb",
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                zIndex: 2000,
+                boxShadow: "0 4px 10px rgba(0,0,0,0.25)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              🤖
+            </button>
+
+            {/* Modal */}
+            {showAISuggest && (
+              <AISuggestionModal
+                onClose={() => setShowAISuggest(false)}
+                tasks={tasks}
+                currentEnergy={energyLevel}
+                availableTime={availableTime}
+              />
+            )}
           </div>
         </div>
 
@@ -241,7 +279,6 @@ export default function ToDoApp() {
             setEnergyLevel={setEnergyLevel}
             availableTime={availableTime}
             setAvailableTime={setAvailableTime}
-            theme={currentTheme}
           />
         )}
 
@@ -252,6 +289,7 @@ export default function ToDoApp() {
     );
   }
 
+  /* ------------------- DESKTOP LAYOUT ------------------- */
   return (
     <div style={{ ...currentTheme.page }}>
       <section style={{ ...currentTheme.leftPanel }}>
@@ -283,19 +321,19 @@ export default function ToDoApp() {
           </label>
         </div>
 
-      <SuggestTask
-        tasks={tasks}
-        theme={currentTheme}
-        currentEnergy={energyLevel}
-        availableTime={availableTime}
-      />
-      <div style={{ marginTop: 12 }}>
-        <Calendar
+        <SuggestTask
           tasks={tasks}
-          selectedDate={selectedDate}
-          onSelectDate={setSelectedDate}
           theme={currentTheme}
+          currentEnergy={energyLevel}
+          availableTime={availableTime}
         />
+        <div style={{ marginTop: 12 }}>
+          <Calendar
+            tasks={tasks}
+            selectedDate={selectedDate}
+            onSelectDate={setSelectedDate}
+            theme={currentTheme}
+          />
         </div>
       </section>
 
@@ -333,6 +371,34 @@ export default function ToDoApp() {
         )}
 
         {reminderTask && <ReminderModal task={reminderTask} onClose={() => setReminderTask(null)} />}
+        <button
+          onClick={() => setShowAISuggest(true)}
+          style={{
+            position: "fixed",
+            right: "40px",
+            bottom: "90px",
+            borderRadius: "50%",
+            width: "56px",
+            height: "56px",
+            fontSize: "24px",
+            background: "#2563eb",
+            color: "#fff",
+            border: "none",
+            cursor: "pointer",
+            zIndex: 2000,
+          }}
+        >
+          🤖
+        </button>
+
+      {showAISuggest && (
+        <AISuggestionModal
+          onClose={() => setShowAISuggest(false)}
+          tasks={tasks}
+          currentEnergy={energyLevel}
+          availableTime={availableTime}
+        />
+      )}
       </section>
     </div>
   );
