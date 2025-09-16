@@ -16,14 +16,7 @@
 https://68c7ef38e0408237b4335f80--taskflow-todo-app-naver-hackathon.netlify.app 
 
 ## 🎥 Demo Video
-**Demo video link (≤ 2 minutes):**  
-📌 **Video Upload Guideline:** when uploading your demo video to YouTube, please set the visibility to **Unlisted**.  
-- “Unlisted” videos can only be viewed by users who have the link.  
-- The video will not appear in search results or on your channel.  
-- Share the link in your README so mentors can access it.  
-
-✍️ [Paste your video link here]
-
+[Video link here]
 
 ## 💻 Project Introduction
 
