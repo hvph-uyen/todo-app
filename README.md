@@ -8,7 +8,8 @@
   - `npm install express cors dotenv openai`
   - `npm install`
   - `npm install react-responsive`
-3. Run `npm run dev` or `npm start` to start.
+3. `cd` to the server folder directory and run `node server.js`
+4. Run `npm run dev` or `npm start` to start.
 4. Open your browser and navigate to http://localhost:5173/ (default Vite port) to view the app.
 
 ## 🔗 Deployed Web URL or APK file
@@ -53,7 +54,8 @@ The goal is to create a **productivity tool** that adapts to the user’s curren
 
 - **Task Display**  
   - Tasks are shown on their due date.  
-  - **Color-coded** to show upcoming or overdue tasks at a glance.  
+  - **Color-coded** to show upcoming or overdue tasks at a glance.
+  - Mobile layout for phone usage.
 
 - **AI Task Suggestion 🤖**  
   - User enters **current energy level** and **available time**.  
