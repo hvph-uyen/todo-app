@@ -12,6 +12,11 @@
 4. Run `npm run dev` or `npm start` to start.
 4. Open your browser and navigate to http://localhost:5173/ (default Vite port) to view the app.
 
+### For the AI Integration
+1. Create a `.env` file in the root of the project (or in `src/server` if that's where your app loads it).
+2. Add your OpenAI API key to the `.env` file like this:
+   OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (your openai api key)
+
 ## 🔗 Deployed Web URL or APK file
 https://68c7ef38e0408237b4335f80--taskflow-todo-app-naver-hackathon.netlify.app 
 
