@@ -20,7 +20,7 @@
 ## 🔗 Deployed Web URL or APK file
 https://68c7ef38e0408237b4335f80--taskflow-todo-app-naver-hackathon.netlify.app 
 
-## 🎥 Demo Video
+## 🎥 Demo
 [Video link here]
 
 ## 💻 Project Introduction
@@ -95,25 +95,4 @@ The goal is to create a **productivity tool** that adapts to the user’s curren
 
 - **Database**:  
   - Currently, tasks are stored locally (in-memory / frontend state).  
-  - Can be extended to use a persistent database (e.g., MongoDB, PostgreSQL).  
-
----
-
-## 🧠 Reflection
-
-### a. If you had more time, what would you expand?
-- Add multi-user support with authentication.  
-- Store tasks in a real database so everyone accessing the application can use the AI function (for now can only run locally)
-
-### b. If you integrate AI APIs more for your app, what would you do?
-- Use AI to auto-categorize tasks (work, personal, urgent).  
-- Provide daily productivity insights (e.g., "You’re most productive at 10 AM").  
-- Suggest task splitting if a task is too big.  
-- Add a natural language input (e.g., "Remind me to buy groceries tomorrow at 6 PM").  
-
----
-
-## ✅ Checklist
-- [x] Code runs without errors  
-- [x] All required features implemented (add/edit/delete/complete tasks)  
-- [x] All ✍️ sections are filled  
+  - Can be extended to use a persistent database (e.g., MongoDB, PostgreSQL).
